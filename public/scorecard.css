@@ -1,0 +1,285 @@
+html,
+body {
+  background-image: url("/bowling.png");
+  overflow: hidden;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-wrapper {
+  height: 100%;
+}
+
+.title h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 80px;
+  color: ghostwhite;
+  margin: 0;
+}
+
+.scorecard {
+  margin-top: 70px;
+  position: relative;
+}
+
+.scorecard-entry {
+  position: relative;
+  text-align: center;
+  background-color: rgb(32, 32, 32);
+  background-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,1)), linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(to bottom, rgb(8, 8, 8), rgb(32, 32, 32));
+  background-size: 100% 100%, 10px 10px, 10px 10px, 10px 5px;
+  background-position: 0px 0px, 0px 0px, 5px 5px, 0px 0px;
+  border: 1px solid ghostwhite;
+  border-radius: 30px;
+}
+
+.scorecard-entry h1 {
+  text-align: center;
+  color: ghostwhite;
+  margin: 0;
+}
+
+.score-button {
+  line-height: 3.6rem;
+  font-size: 18px;
+  border: 1px solid ghostwhite;
+  border-radius: 30px;
+  margin-right: 5px;
+}
+
+.ball-container {
+  position: relative;
+  text-align: center;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.ball-holder {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.ball {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  z-index: 50;
+  -webkit-animation: spin 0.75s infinite;
+  -ms-animation: spin 0.75s infinite;
+  -moz-animation: spin 0.75s infinite;
+  animation: spin 0.75s infinite;
+}
+
+.ball-gradient {
+  position: absolute;
+  top: -70px;
+  left: -60px;
+  width: 200px;
+  height: 200px;
+  background-position: -50px -50px;
+  background: #d8c87f; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMTElIiBzdG9wLWNvbG9yPSIjZDhjODdmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTElIiBzdG9wLWNvbG9yPSIjZDhjODdmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTIlIiBzdG9wLWNvbG9yPSIjZGRiYjIyIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMzQlIiBzdG9wLWNvbG9yPSIjZGRiYjIyIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMzUlIiBzdG9wLWNvbG9yPSIjYTM4NTAwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2EzODUwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9yYWRpYWxHcmFkaWVudD4KICA8cmVjdCB4PSItNTAiIHk9Ii01MCIgd2lkdGg9IjEwMSIgaGVpZ2h0PSIxMDEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    #d8c87f 11%,
+    #d8c87f 11%,
+    #ddbb22 12%,
+    #ddbb22 34%,
+    #a38500 35%,
+    #a38500 100%
+  ); /* FF3.6+ */
+  background: -webkit-gradient(
+    radial,
+    center center,
+    0px,
+    center center,
+    100%,
+    color-stop(11%, #d8c87f),
+    color-stop(11%, #d8c87f),
+    color-stop(12%, #ddbb22),
+    color-stop(34%, #ddbb22),
+    color-stop(35%, #a38500),
+    color-stop(100%, #a38500)
+  ); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    #d8c87f 11%,
+    #d8c87f 11%,
+    #ddbb22 12%,
+    #ddbb22 34%,
+    #a38500 35%,
+    #a38500 100%
+  ); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(
+    center,
+    ellipse cover,
+    #d8c87f 11%,
+    #d8c87f 11%,
+    #ddbb22 12%,
+    #ddbb22 34%,
+    #a38500 35%,
+    #a38500 100%
+  ); /* Opera 12+ */
+  background: -ms-radial-gradient(
+    center,
+    ellipse cover,
+    #d8c87f 11%,
+    #d8c87f 11%,
+    #ddbb22 12%,
+    #ddbb22 34%,
+    #a38500 35%,
+    #a38500 100%
+  ); /* IE10+ */
+  background: radial-gradient(
+    ellipse at center,
+    #d8c87f 11%,
+    #d8c87f 11%,
+    #ddbb22 12%,
+    #ddbb22 34%,
+    #a38500 35%,
+    #a38500 100%
+  ); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8c87f', endColorstr='#a38500',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+  z-index: 31;
+}
+
+.finger-hole:nth-child(2) {
+  position: absolute;
+  top: 20px;
+  left: 35px;
+  width: 10px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  z-index: 55;
+}
+
+.finger-hole:nth-child(3) {
+  position: absolute;
+  top: 38px;
+  left: 50px;
+  width: 10px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  z-index: 55;
+}
+
+.finger-hole:nth-child(1) {
+  position: absolute;
+  top: 18px;
+  left: 60px;
+  width: 10px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  z-index: 55;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-ms-keyframes spin {
+  from {
+    -ms-transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+table.scorecard {
+  margin: 0 auto;
+  width: 90%;
+  font-size: 18px;
+  border: 1px solid ghostwhite;
+  text-align: center;
+  table-layout: fixed;
+  margin-bottom: 40px;
+}
+
+table.scorecard th,
+tr,
+td {
+  padding: 0;
+  vertical-align: middle;
+  font-family: "Titillium Web", sans-serif;
+  text-align: center;
+}
+
+table.scorecard th {
+  border-bottom: 1px solid;
+  background-color: #d3313a;
+  height: 50px;
+  color: #fff;
+}
+
+table.scorecard th:not(:last-child) {
+  border-right: 1px solid ghostwhite;
+}
+
+table.scorecard td {
+  height: 50px;
+  background-color: rgb(32, 32, 32);
+  background-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,1)), linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(to bottom, rgb(8, 8, 8), rgb(32, 32, 32));
+  background-size: 100% 100%, 10px 10px, 10px 10px, 10px 5px;
+  background-position: 0px 0px, 0px 0px, 5px 5px, 0px 0px;
+}
+
+table.scorecard tr td:not(:last-child) {
+  border-right: 1px solid ghostwhite;
+}
+
+table.scorecard tr:nth-child(2) td:nth-child(even) {
+  border-bottom: 1px solid ghostwhite;
+}
+
+table.scorecard tr:nth-child(2) td:last-child {
+  border-bottom: 1px solid ghostwhite;
+}
