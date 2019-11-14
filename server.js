@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const mustacheExpress = require('mustache-express');
 const expressHandlebars = require('express-handlebars');
 const hbs = require('hbs');
-const port = process.env.PORT || 9000;
+const port = process.env.PORT || 8000;
 const app = express();
 
 app.use(morgan('dev'));
