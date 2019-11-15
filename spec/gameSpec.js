@@ -57,6 +57,62 @@
           expect(game.frames.length).toEqual(10);
           expect(game.numberOfFramesPlayed()).toEqual(10);
         });
+
+        it('should keep a record of the pointsTotal as frames are played', () => {
+          game.frames[0].playerTurn(6);
+          game.frames[0].playerTurn(3);
+          game.frames[1].playerTurn(6);
+          game.frames[1].playerTurn(3);
+          game.frames[2].playerTurn(0);
+          game.frames[2].playerTurn(3);
+          expect(game.pointsTotal()).toEqual(21);
+        });
+
+        it('should work out the pointsTotal for a full game without strikes/spares', () => {
+          game.frames[0].playerTurn(6);
+          game.frames[0].playerTurn(3);
+          game.frames[1].playerTurn(6);
+          game.frames[1].playerTurn(3);
+          game.frames[2].playerTurn(6);
+          game.frames[2].playerTurn(3);
+          game.frames[3].playerTurn(6);
+          game.frames[3].playerTurn(3);
+          game.frames[4].playerTurn(6);
+          game.frames[5].playerTurn(3);
+          game.frames[5].playerTurn(6);
+          game.frames[6].playerTurn(3);
+          game.frames[6].playerTurn(6);
+          game.frames[7].playerTurn(3);
+          game.frames[7].playerTurn(6);
+          game.frames[8].playerTurn(3);
+          game.frames[9].playerTurn(6);
+          game.frames[9].playerTurn(3);
+          expect(game.pointsTotal()).toEqual(72);
+        });
+        
+        it('should work out the pointsTotal for a gutter game', () => {
+          game.frames[0].playerTurn(0);
+          game.frames[0].playerTurn(0);
+          game.frames[1].playerTurn(0);
+          game.frames[1].playerTurn(0);
+          game.frames[2].playerTurn(0);
+          game.frames[2].playerTurn(0);
+          game.frames[3].playerTurn(0);
+          game.frames[3].playerTurn(0);
+          game.frames[4].playerTurn(0);
+          game.frames[4].playerTurn(0);
+          game.frames[5].playerTurn(0);
+          game.frames[5].playerTurn(0);
+          game.frames[6].playerTurn(0);
+          game.frames[6].playerTurn(0);
+          game.frames[7].playerTurn(0);
+          game.frames[7].playerTurn(0);
+          game.frames[8].playerTurn(0);
+          game.frames[8].playerTurn(0);
+          game.frames[9].playerTurn(0);
+          game.frames[9].playerTurn(0);
+          expect(game.pointsTotal()).toEqual(0);
+        });
       });
     });
   });
