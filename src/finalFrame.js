@@ -7,7 +7,7 @@ class FinalFrame extends Frame {
 
   playerTurn(pinsdown) {
     this.checkTurns(pinsdown);
-    this.frameUpdate(pinsdown);
+    this.finalFrameUpdate(pinsdown);
     this.numberOfTurns++;
   }
 
@@ -17,11 +17,31 @@ class FinalFrame extends Frame {
     }
   }
 
+  finalFrameUpdate(pinsdown) {
+    this.reload(pinsdown);
+    this.score += pinsdown;
+    this.updateTurn(pinsdown);
+  }
+
   spareOrStrikeThreeTurns() {
     return ((this.spareScored() || this.strikeScored()) && this.numberOfTurns === 3);
   }
 
   notSpareOrStrikeTwoTurns() {
     return ((!this.strikeScored() && !this.spareScored()) && this.numberOfTurns === 2);
+  }
+
+  reload(pinsdown) {
+    if (pinsdown === 10 ) { 
+      this.totalPins = 10; 
+    } else if ( this.turnOne + this.turnTwo === 10 ) { 
+      this.totalPins = 10;
+    } else { 
+      this.totalPins -= pinsdown; }
+  }
+
+  updateTurn(pinsdown) {
+    this.turnOne === null ? this.turnOne = pinsdown : 
+    this.turnTwo === null ? this.turnTwo = pinsdown : this.turnThree = pinsdown;
   }
 }

@@ -46,6 +46,18 @@
       it("responds to notSpareOrStrikeTwoTurns", () => {
         expect(typeof finalFrame.notSpareOrStrikeTwoTurns).toEqual("function");
       });
+
+      it("responds to finalFrameUpdate", () => {
+        expect(typeof finalFrame.finalFrameUpdate).toEqual("function");
+      });
+
+      it("responds to reload", () => {
+        expect(typeof finalFrame.reload).toEqual("function");
+      });
+
+      it("responds to updateTurn", () => {
+        expect(typeof finalFrame.updateTurn).toEqual("function");
+      });
     });
 
     describe("FinalFrame can handle the number of turns dependant on points scored", () => {
@@ -63,6 +75,17 @@
         finalFrame.playerTurn(10);
         finalFrame.playerTurn(6);
         finalFrame.playerTurn(3);
+        expect(() => {
+          finalFrame.playerTurn(6);
+        }).toThrow(
+          new Error("Three turns is cheating!")
+        );
+      });
+
+      it ('should only allow 3 turns in final frame if a spare is scored', () => {
+        finalFrame.playerTurn(7);
+        finalFrame.playerTurn(3);
+        finalFrame.playerTurn(6);
         expect(() => {
           finalFrame.playerTurn(6);
         }).toThrow(
