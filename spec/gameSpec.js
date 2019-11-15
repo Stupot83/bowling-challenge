@@ -25,6 +25,16 @@
         expect(game.frames).toEqual([]);
       });
     });
+
+    describe("Tracking the number of frames", () => {
+      it("responds to numberOfFramesPlayed", () => {
+        expect(typeof game.numberOfFramesPlayed).toEqual("function");
+      });
+
+      it("starts with number of frames as 0", () => {
+        expect(game.numberOfFramesPlayed()).toEqual(0);
+      });
+    });
   });
 
 })();
