@@ -22,24 +22,20 @@
         expect(typeof frame.totalPins).toEqual("number");
       });
 
-      it("responds to playerTurn", () => {
+      it("has an attribute of playerTurn", () => {
         expect(typeof frame.numberOfTurns).toEqual("number");
       });
 
-      it("responds to turnOne", () => {
+      it("has an attribute of turnOne", () => {
         expect(typeof frame.turnOne).toEqual("object");
       });
 
-      it("should always start with turnOne as null", () => {
-        expect(frame.turnOne).toEqual(null);
-      });
-
-      it("responds to turnTwo", () => {
+      it("has an attribute of turnTwo", () => {
         expect(typeof frame.turnTwo).toEqual("object");
       });
 
-      it("should always start with turnTwo as null", () => {
-        expect(frame.turnTwo).toEqual(null);
+      it("has an attribute of points", () => {
+        expect(typeof frame.points).toEqual("number");
       });
 
       it("should always start with ten pins", () => {
@@ -48,6 +44,18 @@
 
       it("should always start with numberOfTurns at 0", () => {
         expect(frame.numberOfTurns).toEqual(0);
+      });
+
+      it("should always start with turnOne as null", () => {
+        expect(frame.turnOne).toEqual(null);
+      });
+
+      it("should always start with turnTwo as null", () => {
+        expect(frame.turnTwo).toEqual(null);
+      });
+
+      it("should always start with points at 0", () => {
+        expect(frame.points).toEqual(0);
       });
     });
 
@@ -116,6 +124,19 @@
         frame.playerTurn(3);
         expect(frame.turnOne).toEqual(6);
         expect(frame.turnTwo).toEqual(3);
+      });
+    });
+
+    describe("Should keep a track of the players points", () => {
+      it("should track points from turn one", () => {
+        frame.playerTurn(6);
+        expect(frame.points).toEqual(6);
+      });
+
+      it("should accumulate points after two turns", () => {
+        frame.playerTurn(6);
+        frame.playerTurn(3);
+        expect(frame.points).toEqual(9);
       });
     });
   });

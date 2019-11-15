@@ -4,6 +4,7 @@ class Frame {
     this.numberOfTurns = 0;
     this.turnOne = null;
     this.turnTwo = null;
+    this.points = 0;
   }
 
   playerTurn(pinsdown) {
@@ -23,6 +24,7 @@ class Frame {
 
   frameUpdate(pinsdown) {
     this.totalPins -= pinsdown;
+    this.points += pinsdown;
     this.turnOne === null ? this.turnOne = pinsdown : this.turnTwo = pinsdown;
   }
 }
