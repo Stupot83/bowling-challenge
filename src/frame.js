@@ -27,4 +27,19 @@ class Frame {
     this.points += pinsdown;
     this.turnOne === null ? this.turnOne = pinsdown : this.turnTwo = pinsdown;
   }
+
+  spareScored() {
+    if (((this.turnOne + this.turnTwo) === 10) && this.turnTwo !== null) {
+      return true;
+    }
+    else if (((this.turnOne + this.turnTwo) !== 10) && this.turnTwo !== null) {
+      return false;
+    }
+    else if (this.turnOne === null) {
+      return false;
+    }
+    else if (((this.turnOne) !==10) && this.turnTwo === null) {
+      return false;
+    }
+  }
 }

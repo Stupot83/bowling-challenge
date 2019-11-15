@@ -139,5 +139,32 @@
         expect(frame.points).toEqual(9);
       });
     });
+
+    describe("Should be able to handle a spare being scored", () => {
+      it("responds to spareScored", () => {
+        expect(typeof frame.spareScored).toEqual("function");
+      });
+
+      it("should be false at start of a frame", () => {
+        expect(frame.spareScored()).toEqual(false);
+      });
+
+      it("should be false after first turn", () => {
+        frame.playerTurn(9);
+        expect(frame.spareScored()).toEqual(false);
+      });
+
+      it ('should recognise a spare', () => {
+        frame.playerTurn(9);
+        frame.playerTurn(1);
+        expect(frame.spareScored()).toEqual(true);
+      });
+
+      it ('should recognise when not a spare after two turns', () => {
+        frame.playerTurn(8);
+        frame.playerTurn(1);
+        expect(frame.spareScored()).toEqual(false);
+      });
+    });
   });
 })();
