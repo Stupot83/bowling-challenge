@@ -1,3 +1,4 @@
+
 (function () {
   "use strict";
 
@@ -31,6 +32,14 @@
 
       it("should always start with turnOne as null", () => {
         expect(frame.turnOne).toEqual(null);
+      });
+
+      it("responds to turnTwo", () => {
+        expect(typeof frame.turnTwo).toEqual("object");
+      });
+
+      it("should always start with turnTwo as null", () => {
+        expect(frame.turnTwo).toEqual(null);
       });
 
       it("should always start with ten pins", () => {
@@ -100,6 +109,13 @@
       it("should recognise the first turn", () => {
         frame.playerTurn(6);
         expect(frame.turnOne).toEqual(6);
+      });
+
+      it("should recognise the second turn", () => {
+        frame.playerTurn(6);
+        frame.playerTurn(3);
+        expect(frame.turnOne).toEqual(6);
+        expect(frame.turnTwo).toEqual(3);
       });
     });
   });
