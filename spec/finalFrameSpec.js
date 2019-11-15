@@ -40,11 +40,11 @@
       });
 
       it("responds to spareOrStrikeThreeTurns", () => {
-        expect(typeof finalFrame._spareOrStrikeThreeTurns).toEqual("function");
+        expect(typeof finalFrame.spareOrStrikeThreeTurns).toEqual("function");
       });
 
       it("responds to notSpareOrStrikeTwoTurns", () => {
-        expect(typeof finalFrame._notSpareOrStrikeTwoTurns).toEqual("function");
+        expect(typeof finalFrame.notSpareOrStrikeTwoTurns).toEqual("function");
       });
 
       it("responds to finalFrameUpdate", () => {

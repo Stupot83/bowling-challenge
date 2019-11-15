@@ -19,7 +19,7 @@ class FinalFrame extends Frame {
 
   finalFrameUpdate(pinsdown) {
     this.reload(pinsdown);
-    this.score += pinsdown;
+    this.points += pinsdown;
     this.updateTurn(pinsdown);
   }
 

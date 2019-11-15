@@ -91,7 +91,7 @@
           game.frames[8].playerTurn(3);
           game.frames[9].playerTurn(6);
           game.frames[9].playerTurn(3);
-          expect(game.pointsTotal()).toEqual(72);
+          expect(game.pointsTotal()).toEqual(81);
         });
 
         it('should work out the pointsTotal for a gutter game', () => {
@@ -125,7 +125,7 @@
           game.setupGame(Frame);
         });
 
-        fdescribe('calculating scores when spares or strikes are scored or final frame', () => {
+        describe('calculating scores when spares or strikes are scored or final frame', () => {
           it('should update the pointsTotal on next frame if a spare is scored', () => {
             game.frames[0].playerTurn(5);
             game.frames[0].playerTurn(5);
@@ -161,7 +161,7 @@
             game.frames[9].playerTurn(5);
             game.updatePointsWithBonus();
             expect(game.frames[8].points).toEqual(25);
-            expect(game.pointsTotal()).toEqual(25);
+            expect(game.pointsTotal()).toEqual(45);
           });
         
           it('should update the pointsTotal when there is a spare in final frame', () => {
