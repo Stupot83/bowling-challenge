@@ -47,6 +47,14 @@
 
     describe("Frame should only have two turns per player", () => {
 
+      it("responds to isTurnLegal", () => {
+        expect(typeof frame.isTurnLegal).toEqual("function");
+      });
+
+      it("responds to frameUpdate", () => {
+        expect(typeof frame.frameUpdate).toEqual("function");
+      });
+
       it("numberOfTurns updates", () => {
         frame.playerTurn(6);
         expect(frame.numberOfTurns).toEqual(1);

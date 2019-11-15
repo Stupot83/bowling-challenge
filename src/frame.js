@@ -5,11 +5,18 @@ class Frame {
   }
 
   playerTurn(pinsdown) {
+    this.isTurnLegal(pinsdown);
+    this.frameUpdate(pinsdown);
+    this.numberOfTurns++;
+  }
+
+  isTurnLegal() {
     if (this.numberOfTurns === 2) {
       throw new Error("Three turns is cheating!");
     }
-    
+  }
+
+  frameUpdate(pinsdown) {
     this.totalPins -= pinsdown;
-    this.numberOfTurns++;
   }
 }
