@@ -26,4 +26,30 @@ class Game {
     }
     return totalPoints;
   }
+
+  updatePointsWithBonus() {
+    for (var i = 0; i < 9; i++) { 
+      this.spareBonus(i);
+      this.strikeBonus(i);  
+    }
+  }
+
+  spareBonus(i) {
+    if (this.frames[i].spareScored()) { 
+      this.frames[i].points += this.extraTurnOne(i); 
+    }
+  }
+
+  strikeBonus(i) {
+    if (this.frames[i].strikeScored()) { 
+      this.frames[i].points += (this.extraTurnOne(i) + this.extraTurnTwo(i)); }
+  }
+
+  extraTurnOne(i) {
+    return this.frames[i+1].turnOne;
+  }
+
+  extraTurnTwo(i) {
+    return this.frames[i+1].turnTwo || this.frames[i+2].turnOne;
+  }
 }
