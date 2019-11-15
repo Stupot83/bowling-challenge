@@ -10,9 +10,12 @@ class Frame {
     this.numberOfTurns++;
   }
 
-  isTurnLegal() {
+  isTurnLegal(pinsdown) {
     if (this.numberOfTurns === 2) {
       throw new Error("Three turns is cheating!");
+    }
+    if (this.totalPins - pinsdown < 0) {
+      throw new Error("Nice try but I don't think so!");
     }
   }
 

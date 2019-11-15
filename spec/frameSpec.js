@@ -1,4 +1,4 @@
-(function() {
+(function () {
   "use strict";
 
   describe("Frame", () => {
@@ -73,6 +73,17 @@
           frame.playerTurn(6);
         }).toThrow(
           new Error("Three turns is cheating!")
+        );
+      });
+    });
+
+    describe("Frame can only have two scores totalling no more than ten points", () => {
+      it("if score inputted exceeds ten, throw an error", () => {
+        frame.playerTurn(7);
+        expect(() => {
+          frame.playerTurn(9);
+        }).toThrow(
+          new Error("Nice try but I don't think so!")
         );
       });
     });
