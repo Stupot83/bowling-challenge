@@ -42,4 +42,19 @@ class Frame {
       return false;
     }
   }
+
+  strikeScored() {
+    if (this.turnOne === 10) {
+      return true;
+    }
+    else if (this.turnOne === null) {
+      return false;
+    }
+    else if ((this.turnOne === 0 && this.turnTwo === 10) && this.turnTwo !==null) {
+      return false;
+    }
+    else if (((this.turnOne + this.turnTwo) === 10) && this.turnTwo !== null) {
+      return false;
+    }
+  }
 }

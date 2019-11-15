@@ -166,5 +166,32 @@
         expect(frame.spareScored()).toEqual(false);
       });
     });
+
+    describe("Should be able to handle a strike being scored", () => {
+      it("responds to strikeScored", () => {
+        expect(typeof frame.strikeScored).toEqual("function");
+      });
+
+      it("should be false at start of a frame", () => {
+        expect(frame.strikeScored()).toEqual(false);
+      });
+
+      it ('should recognise a strike', () => {
+        frame.playerTurn(10);
+        expect(frame.strikeScored()).toEqual(true);
+      });
+
+      it ('should recognise as not a strike after two turns if first score is 0', () => {
+        frame.playerTurn(0);
+        frame.playerTurn(10);
+        expect(frame.strikeScored()).toEqual(false);
+      });
+
+      it ('should recognise as not a strike after two turns if total is 10', () => {
+        frame.playerTurn(4);
+        frame.playerTurn(6);
+        expect(frame.strikeScored()).toEqual(false);
+      });
+    });
   });
 })();
