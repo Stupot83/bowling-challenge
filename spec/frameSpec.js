@@ -25,6 +25,14 @@
         expect(typeof frame.numberOfTurns).toEqual("number");
       });
 
+      it("responds to turnOne", () => {
+        expect(typeof frame.turnOne).toEqual("object");
+      });
+
+      it("should always start with turnOne as null", () => {
+        expect(frame.turnOne).toEqual(null);
+      });
+
       it("should always start with ten pins", () => {
         expect(frame.totalPins).toEqual(10);
       });
@@ -85,6 +93,13 @@
         }).toThrow(
           new Error("Nice try but I don't think so!")
         );
+      });
+    });
+
+    describe("Frame should know which turn has been played", () => {
+      it("should recognise the first turn", () => {
+        frame.playerTurn(6);
+        expect(frame.turnOne).toEqual(6);
       });
     });
   });
