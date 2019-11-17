@@ -23,6 +23,8 @@ body {
 .scorecard {
   margin-top: 70px;
   position: relative;
+  color: ghostwhite;
+  font-weight: bold;
 }
 
 .scorecard-entry {
@@ -274,6 +276,7 @@ table.scorecard td {
 
 table.scorecard tr td:not(:last-child) {
   border-right: 1px solid ghostwhite;
+  border-bottom: 1px solid ghostwhite;
 }
 
 table.scorecard tr:nth-child(2) td:nth-child(even) {

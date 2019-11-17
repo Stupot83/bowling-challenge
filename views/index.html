@@ -27,13 +27,13 @@
         </div>
       </div>
       <div class="ball-holder offset-xl-11 col-xl-6 mr-3">
-          <div class="ball-gradient"></div>
-          <div class="ball">
-            <div class="finger-hole"></div>
-            <div class="finger-hole"></div>
-            <div class="finger-hole"></div>
-          </div>
+        <div class="ball-gradient"></div>
+        <div class="ball">
+          <div class="finger-hole"></div>
+          <div class="finger-hole"></div>
+          <div class="finger-hole"></div>
         </div>
+      </div>
     </div>
 
     <div class="title">
@@ -52,58 +52,59 @@
           <th colspan="6" id="frame-7-header">Frame 7</th>
           <th colspan="6" id="frame-8-header">Frame 8</th>
           <th colspan="6" id="frame-9-header">Frame 9</th>
-          <th colspan="6" id="frame-10-header">Frame 10</th>
+          <th colspan="9" id="frame-10-header">Frame 10</th>
         </tr>
         <tr>
-          <td colspan="3"></td>
-          <td id="frame-1-score" colspan="3"></td>
-          <td colspan="3"></td>
-          <td id="frame-2-score" colspan="3"></td>
-          <td colspan="3"></td>
-          <td id="frame-3-score" colspan="3"></td>
-          <td colspan="3"></td>
-          <td id="frame-4-score" colspan="3"></td>
-          <td colspan="3"></td>
-          <td id="frame-5-score" colspan="3"></td>
-          <td colspan="3"></td>
-          <td id="frame-6-score" colspan="3"></td>
-          <td colspan="3"></td>
-          <td id="frame-7-score" colspan="3"></td>
-          <td colspan="3"></td>
-          <td id="frame-8-score" colspan="3"></td>
-          <td colspan="3"></td>
-          <td id="frame-9-score" colspan="3"></td>
-          <td colspan="3"></td>
-          <td id="frame-10-score" colspan="3"></td>
+          <td colspan="3" id="frame-1-points-1"></td>
+          <td id="frame-1-points-2" colspan="3"></td>
+          <td colspan="3" id="frame-2-points-1"></td>
+          <td id="frame-2-points-2" colspan="3"></td>
+          <td colspan="3" id="frame-3-points-1"></td>
+          <td id="frame-3-points-2" colspan="3"></td>
+          <td colspan="3" id="frame-4-points-1"></td>
+          <td id="frame-4-points-2" colspan="3"></td>
+          <td colspan="3" id="frame-5-points-1"></td>
+          <td id="frame-5-points-2" colspan="3"></td>
+          <td colspan="3" id="frame-6-points-1"></td>
+          <td id="frame-6-points-2" colspan="3"></td>
+          <td colspan="3" id="frame-7-points-1"></td>
+          <td id="frame-7-points-2" colspan="3"></td>
+          <td colspan="3" id="frame-8-points-1"></td>
+          <td id="frame-8-points-2" colspan="3"></td>
+          <td colspan="3" id="frame-9-points-1"></td>
+          <td id="frame-9-points-2" colspan="3"></td>
+          <td colspan="3" id="frame-10-points-1"></td>
+          <td id="frame-10-points-2" colspan="3"></td>
+          <td id="frame-10-points-3" colspan="3"></td>
         </tr>
         <tr>
-          <td colspan="6" id="marker-0"></td>
-          <td colspan="6" id="marker-1"></td>
-          <td colspan="6" id="marker-2"></td>
-          <td colspan="6" id="marker-3"></td>
-          <td colspan="6" id="marker-4"></td>
-          <td colspan="6" id="marker-5"></td>
-          <td colspan="6" id="marker-6"></td>
-          <td colspan="6" id="marker-7"></td>
-          <td colspan="6" id="marker-8"></td>
-          <td colspan="6" id="marker-9"></td>
+          <td colspan="6" id="frame1"></td>
+          <td colspan="6" id="frame2"></td>
+          <td colspan="6" id="frame3"></td>
+          <td colspan="6" id="frame4"></td>
+          <td colspan="6" id="frame5"></td>
+          <td colspan="6" id="frame6"></td>
+          <td colspan="6" id="frame7"></td>
+          <td colspan="6" id="frame8"></td>
+          <td colspan="6" id="frame9"></td>
+          <td colspan="9" id="frame10"></td>
         </tr>
       </table>
     </div>
 
     <div class="scorecard-entry pt-3 pb-3 col-xl-10 offset-xl-1">
       <h1 class="pb-3">Please Enter Your Score:</h1>
-      <button class="score-button col-xl-1 btn btn-danger" type="button">Gutter</button>
-      <button class="score-button col-xl-1 btn btn-danger" type="button">1</button>
-      <button class="score-button col-xl-1 btn btn-danger" type="button">2</button>
-      <button class="score-button col-xl-1 btn btn-warning" type="button">3</button>
-      <button class="score-button col-xl-1 btn btn-warning" type="button">4</button>
-      <button class="score-button col-xl-1 btn btn-warning" type="button">5</button>
-      <button class="score-button col-xl-1 btn btn-success" type="button">6</button>
-      <button class="score-button col-xl-1 btn btn-success" type="button">7</button>
-      <button class="score-button col-xl-1 btn btn-success" type="button">8</button>
-      <button class="score-button col-xl-1 btn btn-success" type="button">9</button>
-      <button class="score-button col-xl-1 btn btn-success" type="button">Strike</button>
+      <button class="score-button col-xl-1 btn btn-danger" id="btn0" value="0" type="button">Gutter</button>
+      <button class="score-button col-xl-1 btn btn-danger" id="btn1" value="1" type="button">1</button>
+      <button class="score-button col-xl-1 btn btn-danger" id="btn2" value="2" type="button">2</button>
+      <button class="score-button col-xl-1 btn btn-warning" id="btn3" value="3" type="button">3</button>
+      <button class="score-button col-xl-1 btn btn-warning" id="btn4" value="4" type="button">4</button>
+      <button class="score-button col-xl-1 btn btn-warning" id="btn5" value="5" type="button">5</button>
+      <button class="score-button col-xl-1 btn btn-success" id="btn6" value="6" type="button">6</button>
+      <button class="score-button col-xl-1 btn btn-success" id="btn7" value="7" type="button">7</button>
+      <button class="score-button col-xl-1 btn btn-success" id="btn8" value="8" type="button">8</button>
+      <button class="score-button col-xl-1 btn btn-success" id="btn9" value="9" type="button">9</button>
+      <button class="score-button col-xl-1 btn btn-success" id="btn10" value="10" type="button">Strike</button>
     </div>
   </div>
 
@@ -114,6 +115,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
     integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
     crossorigin="anonymous"></script>
+  <script src="/interface.js"></script>
+  <script src="/frame.js"></script>
+  <script src="/finalFrame.js"></script>
+  <script src="/game.js"></script>
+  <script src="/player.js"></script>
 </body>
 
 </html>
