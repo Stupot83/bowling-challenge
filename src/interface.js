@@ -1,6 +1,6 @@
 $(document).ready(() => {
   let game = new Game();
-  let player = new Player();
+  let player = new Player(game);
 
   game.setupGame(Frame);
 
@@ -44,7 +44,7 @@ $(document).ready(() => {
   $('#btn0').on('click', () => {
     event.preventDefault();
     var points = $('#btn0').val();
-    player.bowl(points, game.frames[0]);
+    player.bowl(points);
     console.log(game);
     setPoints();
   });

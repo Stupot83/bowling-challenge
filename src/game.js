@@ -13,7 +13,7 @@ class Game {
     }
 
     for (let i = 0; i < 9; i++) {
-      this.frames.push(new element);
+      this.frames.push(new element());
     }
 
     this.frames.push(new FinalFrame());
@@ -28,28 +28,33 @@ class Game {
   }
 
   updatePointsWithBonus() {
-    for (var i = 0; i < 9; i++) { 
+    for (var i = 0; i < 9; i++) {
       this.spareBonus(i);
-      this.strikeBonus(i);  
+      this.strikeBonus(i);
     }
   }
 
   spareBonus(i) {
-    if (this.frames[i].spareScored()) { 
-      this.frames[i].points += this.extraTurnOne(i); 
+    if (this.frames[i].spareScored()) {
+      this.frames[i].points += this.extraTurnOne(i);
     }
   }
 
   strikeBonus(i) {
-    if (this.frames[i].strikeScored()) { 
-      this.frames[i].points += (this.extraTurnOne(i) + this.extraTurnTwo(i)); }
+    if (this.frames[i].strikeScored()) {
+      this.frames[i].points += (this.extraTurnOne(i) + this.extraTurnTwo(i));
+    }
   }
 
   extraTurnOne(i) {
-    return this.frames[i+1].turnOne;
+    return this.frames[i + 1].turnOne;
   }
 
   extraTurnTwo(i) {
-    return this.frames[i+1].turnTwo || this.frames[i+2].turnOne;
+    return this.frames[i + 1].turnTwo || this.frames[i + 2].turnOne;
+  }
+
+  get currentFrame() {
+    this.frames.find(frame => !frame.turnOne || !frame.turnTwo);
   }
 }

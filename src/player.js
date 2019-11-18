@@ -1,8 +1,9 @@
 class Player {
-  constructor() {
+  constructor(game) {
+    this._game = game;
   }
 
-  bowl(pinsdown, currentframe) {
-    currentframe.playerTurn(pinsdown);
+  bowl(pinsdown) {
+    this._game.currentFrame.playerTurn(pinsdown);
   }
 }
