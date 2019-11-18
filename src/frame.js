@@ -24,7 +24,7 @@ class Frame {
 
   frameUpdate(pinsdown) {
     this.totalPins -= pinsdown;
-    this.points += pinsdown;
+    this.points += parseInt(pinsdown, 10);
     this.turnOne === null ? this.turnOne = pinsdown : this.turnTwo = pinsdown;
   }
 

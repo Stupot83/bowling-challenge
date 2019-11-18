@@ -28,7 +28,7 @@ class Game {
   }
 
   updatePointsWithBonus() {
-    for (var i = 0; i < 9; i++) {
+    for (let i = 0; i < 9; i++) {
       this.spareBonus(i);
       this.strikeBonus(i);
     }
@@ -55,6 +55,6 @@ class Game {
   }
 
   get currentFrame() {
-    this.frames.find(frame => !frame.turnOne || !frame.turnTwo);
+    return this.frames.find(frame => { return !frame.turnOne || !frame.turnTwo || (frame instanceof FinalFrame && (!frame.notSpareOrStrikeTwoTurns() || !frame.turnThree)); });
   }
 }

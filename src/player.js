@@ -4,6 +4,6 @@ class Player {
   }
 
   bowl(pinsdown) {
-    this._game.currentFrame.playerTurn(pinsdown);
+    parseInt(this._game.currentFrame.playerTurn(pinsdown), 10);
   }
 }
